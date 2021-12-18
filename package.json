@@ -1,0 +1,48 @@
+{
+	"name": "@aduth/is-dependency",
+	"version": "1.0.0",
+	"description": "Quickly determine if the given package(s) are dependencies in the current directory",
+	"main": "index.js",
+	"scripts": {
+		"clean:types": "rm -f index.d.ts",
+		"prebuild:types": "npm run clean:types",
+		"build:types": "tsc -p tsconfig.decl.json",
+		"build": "npm run build:types",
+		"test:lint": "eslint .",
+		"test:typecheck": "tsc",
+		"test": "npm run test:lint && npm run test:typecheck",
+		"prepublishOnly": "npm test"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"installed",
+		"dependencies",
+		"dependency"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/aduth/is-dependency.git"
+	},
+	"bugs": {
+		"url": "https://github.com/aduth/is-dependency/issues"
+	},
+	"author": {
+		"name": "Andrew Duthie",
+		"email": "andrew@andrewduthie.com",
+		"url": "https://andrewduthie.com"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@aduth/eslint-config": "^4.3.0",
+		"@types/node": "^17.0.0",
+		"eslint": "^8.5.0",
+		"prettier": "^2.5.1",
+		"typescript": "^4.5.4"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
